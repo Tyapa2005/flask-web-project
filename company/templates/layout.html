@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Saul Goodman">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% block title %}{% endblock%}
+  <link href="{{ url_for('static', filename='Bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/main.css') }}">
+</head>
+
+<body class="bg-dark text-light d-flex flex-column min-vh-100"> 
+    {% if show_navbar %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+      <div class="container-fluid">
+        <a class="navbar-brand">
+          <img src="{{ url_for('static', filename='IMG/image.png') }}" alt="Логотип" style="max-height: 100px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            {% if user.is_authenticated %}
+            <li class="nav-item"><a class="nav-link {% if request.endpoint == 'index' %}active{% endif %}" href="{{ url_for('index') }}">Головна</a></li>
+            <li class="nav-item"><a class="nav-link {% if request.endpoint == 'agreements' %}active{% endif %}" href="{{ url_for('agreements') }}">Договори</a></li>
+            <li class="nav-item"><a class="nav-link {% if request.endpoint == 'employee' %}active{% endif %}" href="{{ url_for('employee') }}">Співробітники</a></li>
+            <li class="nav-item"><a class="nav-link {% if request.endpoint == 'company' %}active{% endif %}" href="{{ url_for('company') }}">Про нас</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Вихід</a></li>
+            {% else %}
+            <li class="nav-item"><a class="nav-link {% if request.endpoint == 'login' %}active{% endif %}" href="{{ url_for('login') }}">Авторизація</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% endif %}
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+      {% if category == "error" %}
+      <div class="alert alert-danger alert-dismissable fade show mt-3" role="alert">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% else %}
+      <div class="alert alert-success alert-dismissable fade show mt-3" role="success">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock%}
+
+  <footer class="bg-black bg-opacity-75 text-center py-4 mt-5">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Better Call Saul. Усі права захищено.</p>
+    </div>
+  </footer>
+  <script src="{{ url_for('static', filename='Bootstrap/js/bootstrap.bundle.min.js') }}" ></script>
+  <script src="{{ url_for('static', filename='jQuery/jquery-3.7.1.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}" ></script> 
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js "></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</body>
+</html>

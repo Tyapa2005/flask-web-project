@@ -1,0 +1,47 @@
+{% extends "layout.html"%}
+
+{% block title %}
+
+  <meta name="description" content="Реєстрація в системі Better Call Saul.">
+  <meta name="keywords" content="реєстрація, логін, доступ">
+  <title>Better Call Saul – Реєстрація</title>
+
+{% endblock %}
+
+{% block content %}
+  <header class="py-4 bg-black bg-opacity-75 mb-5">
+    <div class="container text-center">
+      <img id="login-logo" src="{{ url_for('static', filename='IMG/image.png') }}" alt="Логотип компанії" class="img-fluid mb-3" style="max-height: 100px;">
+      <h1 class="display-5">Реєстрація</h1>
+    </div>
+  </header>
+  
+  <div class="container d-flex align-items-center justify-content-center flex-grow-1">
+    <div class="bg-dark text-white p-4 p-md-5 rounded-4 shadow w-100" style="max-width: 400px;">
+      <form method="POST">
+        <div class="mb-3">
+          <label for="email">Електронна скринька</label>
+          <input type="email" name="email" placeholder="Enter email" class="form-control" id="email">
+        </div>
+        <div class="mb-3">
+          <label for="firstName">Ім'я</label>
+          <input type="text" name="firstName" placeholder="Enter first name" class="form-control" id="firstName">
+        </div>
+        <div class="mb-3">
+          <label for="password1">Пароль</label>
+          <input type="password" name="password1" placeholder="Enter password" class="form-control" id="password1">
+        </div>
+        <div class="mb-3">
+          <label for="password2">Пароль (Підтвердження)</label>
+          <input type="password" name="password2" placeholder="Confirm password" class="form-control" id="password2">
+        </div>
+        <br />
+        <button type="submit" class="btn btn-light w-100">Зареєструватись</button>
+      </form>
+      <div class="text-center mt-3">
+        Маєш аккаунт?
+        <a href="{{ url_for('login') }}" class="text-decoration-none text-primary fw-bold">Увійти</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

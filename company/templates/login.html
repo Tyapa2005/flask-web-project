@@ -1,0 +1,39 @@
+{% extends "layout.html"%}
+
+{% block title %}
+
+  <meta name="description" content="Авторизація в системі Better Call Saul.">
+  <meta name="keywords" content="авторизація, логін, доступ">
+  <title>Better Call Saul – Авторизація</title>
+
+{% endblock %}
+
+{% block content %}
+  <header class="py-4 bg-black bg-opacity-75 mb-5">
+    <div class="container text-center">
+      <img id="login-logo" src="{{ url_for('static', filename='IMG/image.png') }}" alt="Логотип компанії" class="img-fluid mb-3" style="max-height: 100px;">
+      <h1 class="display-5">Авторизація</h1>
+    </div>
+  </header>
+  
+  <div class="container d-flex align-items-center justify-content-center flex-grow-1">
+    <div class="bg-dark text-white p-4 p-md-5 rounded-4 shadow w-100" style="max-width: 400px;">
+      <form method="POST">
+        <div class="mb-3">
+          <label for="email">Електронна скринька</label>
+          <input type="email" name="email" placeholder="Enter email" class="form-control" id="email">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Пароль</label>
+          <input type="password" name="password" placeholder="Enter password" class="form-control" id="password">
+        </div>
+        <br />
+        <button type="submit" class="btn btn-light w-100">Увійти</button>
+      </form>
+      <div class="text-center mt-3">
+        Немаєш акканута?
+        <a href="{{ url_for('signup') }}" class="text-decoration-none text-primary fw-bold">Зареєструватись</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

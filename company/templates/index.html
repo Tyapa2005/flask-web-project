@@ -1,0 +1,37 @@
+{% extends "layout.html"%}
+
+{% block title %}
+  <meta name="keywords" content="договори, організація, працівники, облік, управління">
+  <meta name="description" content="Компанія Better Call Saul — облік договорів та співробітників.">
+  <title>Better Call Saul – Головна</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container text-center flex-grow-1">
+      <div class="bg-dark p-5 rounded shadow-lg">
+        <h2 class="mb-4">Ласкаво просимо!</h2>
+        <p class="lead">Better Call Saul — ваш надійний партнер в обліку договорів та управлінні співробітниками.</p>
+        <p class="text-light mt-3">Кількість переглядів сторінки: {{ visit_count }}</p> 
+        <button id="newpagebtn" class="btn btn-outline-light mt-4">Дізнатись більше</button>
+      </div>
+    </div>
+
+    <section id="section1" class="mb-4"></section>
+      <div id="sliderContainer" class="p-4 rounded shadow-lg mx-auto" style="background-color: rgba(0, 0, 0, 0.4); max-width: 900px;">
+        <div class="position-relative mb-3" style="width: 100%;">
+          <img id="sliderImage" src="" alt="Слайд" class="img-fluid rounded w-100" style="object-fit: cover; max-height: 400px;">
+          <button id="prevSlide" class="btn btn-dark position-absolute top-50 start-0 translate-middle-y bg-opacity-50">
+            &#10094;
+          </button>
+          <button id="nextSlide" class="btn btn-dark position-absolute top-50 end-0 translate-middle-y bg-opacity-50">
+            &#10095;
+          </button>
+        </div>
+        <div class="bg-black bg-opacity-50 p-3 rounded">
+          <p id="sliderText" class="lead text-light text-center m-0"></p>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

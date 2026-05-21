@@ -1,0 +1,40 @@
+{% extends "layout.html"%}
+
+{% block title %}
+  <meta name="keywords" content="про компанію, інформація, Better Call Saul, діяльність, місія, цілі">
+  <meta name="description" content="Інформація про компанію Better Call Saul — місія, основна діяльність, цінності та команда.">
+  <title>Better Call Saul – Про компанію</title>
+{% endblock %}
+
+{% block content %}
+  <div class="container flex-grow-1 mb-4" >
+    <div class="bg-dark p-5 rounded shadow-lg">
+      <h2 class="mb-4">Better Call Saul — ваш надійний партнер</h2>
+      <p>Наша компанія спеціалізується на обліку договорів та управлінні персоналом для організацій будь-якого масштабу.</p>
+      <p>Ми пропонуємо комплексні рішення для:</p>
+      <ul class="list-unstyled">
+        <li>• Обліку та супроводу договорів</li>
+        <li>• Управління співробітниками та відстеження їхніх завдань</li>
+        <li>• Аналітики фінансових та трудових ресурсів</li>
+        <li>• Консалтингових послуг у сфері права та бухгалтерії</li>
+      </ul>
+      <p>Мета компанії — забезпечити максимальну ефективність і безпеку процесів управління вашою організацією.</p>
+    </div>
+  </div>
+  <section id="section4"></section>
+    <div id="sliderContainer" class="p-4 rounded shadow-lg mx-auto" style="background-color: rgba(0, 0, 0, 0.4); max-width: 900px;">
+      <div class="position-relative mb-3" style="width: 100%;">
+        <img id="sliderImage" src="" alt="Слайд" class="img-fluid rounded w-100" style="object-fit: cover; max-height: 400px;">
+        <button id="prevSlide" class="btn btn-dark position-absolute top-50 start-0 translate-middle-y bg-opacity-50">
+          &#10094;
+        </button>
+        <button id="nextSlide" class="btn btn-dark position-absolute top-50 end-0 translate-middle-y bg-opacity-50">
+          &#10095;
+        </button>
+      </div>
+      <div class="bg-black bg-opacity-50 p-3 rounded">
+        <p id="sliderText" class="lead text-light text-center m-0"></p>
+      </div>
+    </div>
+  </section>
+{% endblock %}
