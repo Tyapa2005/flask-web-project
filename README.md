@@ -1,4 +1,5 @@
 Small Flask Python web project with connected databese. 
+
 Example of account registration.
 
 <img width="441" height="558" alt="image" src="https://github.com/user-attachments/assets/c3e3a794-cd9f-4210-b598-c534af102bf2" />
